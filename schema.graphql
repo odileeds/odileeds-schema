@@ -1,0 +1,40 @@
+type Query {
+  Project(
+    # Idenfifier of the project to fin
+    id: ID!
+  ): Project
+}
+
+# ODI Leeds project
+type Project {  
+  # Project identifier
+  id: ID!
+
+  # Project name
+  name: String!
+
+  # Link to the ODI Leeds themes
+  themes: [Theme]!
+
+  # Assets delivered to ODI Leeds by the project
+  # NB Don't document all customer deliverables.
+  deliverables: [Asset]!
+
+  # Tools or other delvierables used by the asset
+  assetUsed: [Asset]!
+}
+
+# ODI Leeds tool or other asset
+type Asset {
+  id: ID!
+  name: String!
+  url: String
+  reuseValue: Int
+}
+
+# Not sure if this should be an enum, or whether these are a type in their own right
+enum Theme {
+  RADICALLY_OPEN
+  PLANET_DATA
+  OPEN_DATA_SAVES_LIVES
+}

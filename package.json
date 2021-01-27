@@ -1,0 +1,18 @@
+{
+  "name": "odileeds-schema",
+  "version": "0.0.0",
+  "description": "GraphQL schema for ODI Leeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "graphdoc --schema ./schema.graphql --output ./docs/schema --force",
+    "start": "serve docs",
+    "setup:pnpm": "pnpm import && pnpm install"
+  },
+  "author": "Giles Dring <giles.dring@odileeds.org>",
+  "license": "ISC",
+  "devDependencies": {
+    "@2fd/graphdoc": "^2.4.0",
+    "serve": "^11.3.2"
+  }
+}
